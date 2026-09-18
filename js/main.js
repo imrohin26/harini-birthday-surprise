@@ -356,6 +356,15 @@ function showMemoryReveal(config, isFinal) {
     memoryReveal.classList.add("is-visible");
   });
 
+  // Give the larger Photo 5 and Photo 6 a little more time.
+  const photoDuration =
+    config.photo &&
+    (config.photo.includes("photo-5") || config.photo.includes("photo-6"))
+      ? 5000
+      : config.photo
+        ? 3000
+        : 2600;
+
   scheduleBalloonTimer(() => {
     memoryReveal.classList.remove("is-visible");
 
@@ -368,7 +377,7 @@ function showMemoryReveal(config, isFinal) {
         completeBalloonScene();
       }
     }, 650);
-  }, config.photo ? 3000 : 2600);
+  }, photoDuration);
 }
 
 
