@@ -324,19 +324,34 @@ function showMemoryReveal(config, isFinal) {
   memoryTitle.textContent = config.title;
   memoryMessage.textContent = config.message;
 
-  memoryPhotoWrap.hidden = !config.photo;
+  // Clear the previous photo immediately.
+  memoryPhoto.onload = null;
+  memoryPhoto.onerror = null;
+  memoryPhoto.removeAttribute("src");
+  memoryPhoto.hidden = true;
+  memoryPhotoWrap.hidden = true;
+
   if (config.photo) {
-    memoryPhoto.src = config.photo;
     memoryPhoto.alt = config.alt;
+
+    memoryPhoto.onload = () => {
+      memoryPhoto.hidden = false;
+      memoryPhotoWrap.hidden = false;
+    };
+
     memoryPhoto.onerror = () => {
+      memoryPhoto.hidden = true;
       memoryPhotoWrap.hidden = true;
     };
+
+    // Load the new photo only after the old one has been cleared.
+    memoryPhoto.src = config.photo;
   } else {
-    memoryPhoto.removeAttribute("src");
     memoryPhoto.alt = "";
   }
 
   memoryReveal.hidden = false;
+
   window.requestAnimationFrame(() => {
     memoryReveal.classList.add("is-visible");
   });
@@ -355,6 +370,7 @@ function showMemoryReveal(config, isFinal) {
     }, 650);
   }, config.photo ? 3000 : 2600);
 }
+
 
 function popBalloon(button, index) {
   if (button.dataset.popped === "true" || memoryBusy) {
