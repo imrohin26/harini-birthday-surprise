@@ -85,7 +85,7 @@ const balloons = [
     floatDelay: "600ms",
     title: "We built a little world of our own.",
     message: "It is made of ordinary days, little moments, and memories that became special because they were ours.",
-    photo: "assets/photos/photo-5-our-life.jpg",
+    photo: "assets/photos/photo-5-our-life.JPG",
     alt: "A memory from Harini and Rohin's life together",
   },
   {
@@ -96,7 +96,7 @@ const balloons = [
     floatDelay: "1000ms",
     title: "And then our greatest little chapter began.",
     message: "Rithi made our little world even more beautiful — and gave us a whole new future to look forward to.",
-    photo: "assets/photos/photo-6-rithi.jpg",
+    photo: "assets/photos/photo-6-rithi.JPG",
     alt: "Harini and Rithi",
   },
   {
