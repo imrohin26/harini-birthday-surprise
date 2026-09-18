@@ -3,7 +3,7 @@ name: Deploy Birthday Website
 on:
   push:
     branches:
-      - mains
+      - main
   workflow_dispatch:
 
 permissions:
