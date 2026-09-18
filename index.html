@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A birthday surprise made especially for Harini."
+    />
+    <title>For Harini</title>
+    <link rel="stylesheet" href="css/styles.css?v=20260918-2" />
+  </head>
+  <body>
+    <main id="app" tabindex="-1">
+      <section class="stage stage--opening" data-stage="opening" aria-labelledby="opening-title">
+        <div class="opening__ambience" aria-hidden="true">
+          <span class="ambient-thread ambient-thread--one"></span>
+          <span class="ambient-thread ambient-thread--two"></span>
+          <span class="ambient-thread ambient-thread--three"></span>
+        </div>
+
+        <div class="opening__content">
+          <p class="opening__eyebrow">A little moment, just for you</p>
+          <h1 id="opening-title">Harini...</h1>
+          <p class="opening__message">I made something special for you.</p>
+          <button class="opening__button" type="button" data-action="open-surprise">
+            <span>Open Your Surprise</span>
+            <span class="opening__button-mark" aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="stage stage--interstitial"
+        data-stage="interstitial"
+        aria-live="polite"
+        tabindex="-1"
+        hidden
+      >
+        <p class="interstitial__message">
+          <span>Every beautiful</span>
+          <span>story</span>
+          <span>has a beginning...</span>
+        </p>
+      </section>
+
+      <!-- =====================================================
+     BALLOON STORY — MEMORIES → US → WHAT COMES NEXT
+     ===================================================== -->
+      <section class="stage stage--balloons" data-stage="balloons" tabindex="-1" hidden>
+        <header class="balloon-scene__intro">
+          <p data-balloon-heading>There&rsquo;s something waiting for you...</p>
+          <span data-balloon-instruction>Tap a balloon to continue.</span>
+        </header>
+
+        <div class="balloon-field" data-balloon-field aria-label="Birthday story balloons"></div>
+
+        <div class="memory-reveal" data-memory-reveal hidden aria-live="polite">
+          <div class="memory-reveal__card">
+            <div class="memory-reveal__photo-wrap" data-memory-photo-wrap hidden>
+              <img class="memory-reveal__photo" data-memory-photo src="" alt="" />
+            </div>
+            <div class="memory-reveal__text">
+              <h2 data-memory-title></h2>
+              <p data-memory-message></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="balloon-celebration" data-balloon-celebration aria-hidden="true"></div>
+        <p class="visually-hidden" data-balloon-status aria-live="polite"></p>
+      </section>
+
+<!-- =====================================================
+           PHASE 4 — CAKE & THREE WISHES
+           ===================================================== -->
+      <section
+        class="stage stage--cake-placeholder"
+        data-stage="cake-placeholder"
+        tabindex="-1"
+        hidden
+      >
+        <div class="cake-scene">
+          <div class="cake-intro" data-cake-intro>
+            <p>Something sweet is waiting...</p>
+          </div>
+
+          <div class="cake-content" data-cake-content>
+            <p class="cake-wishes" data-cake-wishes>
+              Make a wish for yourself.
+            </p>
+
+            <div class="cake" aria-label="Birthday cake">
+              <div class="cake-candles" aria-label="Three birthday candles">
+                <button class="cake-candle" data-candle="0" type="button" aria-label="Candle for your first wish" hidden>
+                  <span class="cake-candle__flame" aria-hidden="true"></span>
+                  <span class="cake-candle__body" aria-hidden="true"></span>
+                </button>
+
+                <button class="cake-candle" data-candle="1" type="button" aria-label="Candle for your second wish" hidden>
+                  <span class="cake-candle__flame" aria-hidden="true"></span>
+                  <span class="cake-candle__body" aria-hidden="true"></span>
+                </button>
+
+                <button class="cake-candle" data-candle="2" type="button" aria-label="Candle for your third wish" hidden>
+                  <span class="cake-candle__flame" aria-hidden="true"></span>
+                  <span class="cake-candle__body" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="cake__top"></div>
+              <div class="cake__middle"></div>
+              <div class="cake__base"></div>
+              <div class="cake__plate"></div>
+            </div>
+
+            <p class="cake-prompt" data-cake-prompt>
+              Tap the candle...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PHASE 5 — CONFETTI
+           ===================================================== -->
+      <section
+        class="stage stage--confetti"
+        data-stage="confetti"
+        tabindex="-1"
+        hidden
+        aria-live="polite"
+      >
+        <div class="confetti-scene">
+          <div class="confetti-burst" data-confetti-burst aria-hidden="true"></div>
+          <p class="confetti-kicker">Three wishes made...</p>
+          <h2 class="confetti-title">Let the celebration begin.</h2>
+          <p class="confetti-subtitle">There&rsquo;s still more waiting for you.</p>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PHASE 6 — PERSONAL LETTER
+           ===================================================== -->
+      <section
+        class="stage stage--letter"
+        data-stage="letter"
+        tabindex="-1"
+        hidden
+        aria-labelledby="letter-title"
+      >
+        <div class="letter-scene">
+          <p class="section-kicker">Something I wanted to tell you</p>
+
+          <div class="letter-envelope" data-letter-envelope aria-hidden="true">
+            <span></span>
+          </div>
+
+          <button class="phase-button" type="button" data-action="open-letter">
+            Open my letter
+          </button>
+
+          <article class="letter-card" data-letter-card>
+            <div class="letter-card__body">
+            
+              <p>My Harini,</p>
+            
+              <p>
+                This is your fourth birthday after we got married.
+              </p>
+            
+              <p>
+                When I look back at these years, there is something I have wanted
+                to tell you from my heart for a long time.
+              </p>
+            
+              <p>
+                <strong>I am truly sorry.</strong>
+              </p>
+            
+              <p>
+                I know I have given you pain when I should have given you peace.
+                I have hurt you many times. There were moments when my words and
+                my actions made you feel alone, unwanted, and even made you feel
+                like you should walk away from me.
+              </p>
+            
+              <p>
+                And I know there were times when I failed to understand your feelings.
+                I should have listened to you. I should have stood beside you.
+                I should have made you feel that you were never alone in this marriage.
+              </p>
+            
+              <p>
+                Instead, there were situations involving my family where I allowed
+                things to affect our relationship, and I did not handle them the way
+                I should have. <strong>That was my failure.</strong>
+              </p>
+            
+              <p>
+                I cannot go back and change those moments.
+              </p>
+            
+              <p>
+                I cannot erase the tears I caused.
+              </p>
+            
+              <p>
+                I cannot take back the words that hurt you.
+              </p>
+            
+              <p>
+                But I can do one thing.
+              </p>
+            
+              <p>
+                <strong>I can change what comes next.</strong>
+              </p>
+            
+              <p>
+                I want you to know that I don't want our future to be a continuation
+                of our painful past. I want it to be something we build together —
+                with understanding, respect, peace, love, and trust.
+              </p>
+            
+              <p>
+                You and our baby deserve a husband and father who makes you feel safe,
+                valued, loved, and supported.
+              </p>
+            
+              <p>
+                <strong>I promise I will keep working to become that person.</strong>
+              </p>
+            
+              <p>
+                I cannot promise that I will never make a mistake again. But I can
+                promise that I will listen better, understand better, protect our
+                relationship better, and never stop trying to give you the life and
+                happiness you deserve.
+              </p>
+            
+              <p>
+                The past is past. I cannot go back and fix it.
+              </p>
+            
+              <p>
+                <strong>But I can fix our future.</strong>
+              </p>
+            
+              <p>
+                And I want to spend the rest of my life doing that with you.
+              </p>
+            
+              <p>
+                I am sorry for every time I hurt you.
+              </p>
+            
+              <p>
+                I am sorry for every time I failed to understand you.
+              </p>
+            
+              <p>
+                And most of all, I am sorry for making the person I love feel that
+                she had to go away from me.
+              </p>
+            
+              <p>
+                <strong>Thank you for still being here.</strong>
+              </p>
+            
+              <p>
+                I love you, Harini.
+              </p>
+            
+              <p>
+                <strong>Happy Birthday, my love. ❤️</strong>
+              </p>
+            
+              <p class="letter-signature">
+                — Rohin
+              </p>
+            
+            </div>
+          </article>
+        
+          <button class="phase-button phase-button--secondary" type="button" data-action="next-from-letter" hidden>
+            One last thing <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </section>
+    
+      <!-- =====================================================
+           PHASE 7 — MUSIC
+           ===================================================== -->
+      <section
+        class="stage stage--music"
+        data-stage="music"
+        tabindex="-1"
+        hidden
+        aria-labelledby="music-title"
+      >
+        <div class="music-scene">
+          <p class="section-kicker">For the moment</p>
+          <h2 id="music-title">One song for us</h2>
+          <p class="music-message">Put on the song and take a moment to yourself.</p>
+        
+          <div class="music-disc" aria-hidden="true"><div class="music-disc__center"></div></div>
+        
+          <audio data-audio preload="metadata" src="assets/audio/our-song.mp3"></audio>
+
+          <button class="phase-button" type="button" data-action="toggle-music">Play our song</button>
+
+          <p class="music-hint" data-music-hint>
+            Add your song at <strong>assets/music/our-song.mp3</strong>
+          </p>
+
+          <button class="phase-button phase-button--secondary" type="button" data-action="finish-surprise">
+            Finish <span aria-hidden="true">&#10084;</span>
+          </button>
+        </div>
+      </section>
+
+      <p class="visually-hidden" data-global-status aria-live="polite"></p>
+    </main>
+    <script src="js/main.js?v=20260918-2"></script>
+  </body>
+</html>
